@@ -35,59 +35,62 @@
      combos {
         compatible = "zmk,combos";
 
+//      |------------------------|------------------------|
+//      | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
+//      |                        |                        |
+//      |     0  1  2  3  4      |       5  6  7  8  9    |
+//      |    10 11 12 13 14      |      15 16 17 18 19    |
+//      | 20 21 22 23 24 25      |      26 27 28 29 30 31 |
+//      |          32 33 34      |      35 36 37          |
+//      |------------------------|------------------------|
+
         // <jk>
         combo_bkspc {
             timeout-ms = <50>;
-            key-positions = <19 20>;
+            key-positions = <16 17>;
             bindings = <&kp BACKSPACE>;
         };
-        // <uj>
+        // <jm>
         combo_enter {
             timeout-ms = <50>;
-            key-positions = <7 19>;
+            key-positions = <16 27>;
             bindings = <&macro_ent>;
         };
         // <df>
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <15 16>;
+            key-positions = <12 13>;
             bindings = <&macro_tab>;
         };
-        // <rf>
+        // <fv>
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <4 16>;
+            key-positions = <13 24>;
             bindings = <&macro_esc>;
-        };
-        // <thumbs>
-        combo_spc {
-            timeout-ms = <50>;
-            key-positions = <38 39>;
-            bindings = <&macro_spc >;
         };
 
         // , on <sd>
         // . on <kl>
         combo_comma {
             timeout-ms = <50>;
-            key-positions = <14 15>;
+            key-positions = <11 12>;
             bindings = <&kp COMMA>;
         };
         combo_dot {
             timeout-ms = <50>;
-            key-positions = <20 21>;
+            key-positions = <17 18>;
             bindings = <&kp DOT>;
         };
 
-        // >> and ? on <fg> and <hj>
+        // >> and << on <fg> and <hj>
         combo_shift_r {
             timeout-ms = <50>;
-            key-positions = <16 17>;
+            key-positions = <13 14>;
             bindings = <&macro_sft_r>;
         };
         combo_shift_l {
             timeout-ms = <50>;
-            key-positions = <18 19>;
+            key-positions = <15 16>;
             bindings = <&macro_sft_l>;
         };
     };
