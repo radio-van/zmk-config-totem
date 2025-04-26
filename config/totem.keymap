@@ -153,9 +153,9 @@
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to1>
-                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
                 , <&macro_param_1to1>
-                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
                 , <&macro_tap &kp LEFT>
                 ;
         };
@@ -164,9 +164,9 @@
             #binding-cells = <2>;
             bindings
                 = <&macro_param_1to1>
-                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
                 , <&macro_param_2to1>
-                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
                 , <&macro_tap &kp LEFT>
                 ;
         };
@@ -516,7 +516,7 @@ label= "NUM"                               ;
 label= "NAV"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃    BT0    ┃           ┃           ┃   VOL +   ┃   VOL -   ┃   ┃   HOME    ┃    END    ┃           ┃           ┃           ┃
+//             ┃    BT0    ┃           ┃           ┃   VOL -   ┃   VOL +   ┃   ┃   HOME    ┃    END    ┃           ┃           ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃    BT1    ┃           ┃           ┃           ┃   MUTE    ┃   ┃   LEFT    ┃   DOWN    ┃    UP     ┃   RIGHT   ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
@@ -527,7 +527,7 @@ label= "NAV"                               ;
  bindings = <
 // ╷           ╷            ╷           ╷           ╷           ╷           ╷   ╷             ╷           ╷           ╷           ╷           ╷           ╷
 
-                &bt BT_SEL 0  &none       &none       &kp K_VOL_UP &kp K_VOL_DN    &kp HOME      &kp END     &none      &none       &none         
+                &bt BT_SEL 0  &none       &none       &kp K_VOL_DN &kp K_VOL_UP    &kp HOME      &kp END     &none      &none       &none         
                 &bt BT_SEL 0  &none       &none       &none        &kp K_MUTE      &kp LEFT      &kp DOWN    &kp UP     &kp RIGHT   &none     
     &bootloader &bt BT_SEL 0  &none       &none       &none        &bt BT_CLR      &kp PAGE_DOWN &kp PAGE_UP &none      &none       &none      &bootloader    
                                           &trans      &trans       &trans          &trans        &to DEF     &to DEF     
