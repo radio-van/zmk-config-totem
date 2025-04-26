@@ -260,11 +260,11 @@
         // tap - sticky sym
         // doble-tap - toggle sym
         // tripple-tap - default layer
-        td_sym: tap_dance_sym {
+        td_num: tap_dance_num {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht_mo_sl 1 1>, <&tog 1>, <&to DEF>;
+            bindings = <&ht_mo_sl 2 2>, <&tog 2>, <&to DEF>;
         };
         // hold - nav
         // tap - sticky nav
@@ -273,8 +273,8 @@
         td_nav: tap_dance_nav {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;  // TODO check
-            bindings = <&ht_mo_sl 2 2>, <&tog 2>, <&to DEF>;
+            tapping-term-ms = <200>;  // TODO check
+            bindings = <&ht_mo_sl 3 3>, <&tog 3>, <&to DEF>;
         };
 
         // AUX tap dances
@@ -330,24 +330,24 @@
             tapping-term-ms = <200>;
             bindings = <&kp COMMA>, <&kp BACKSLASH>;
         };
-        td_dot: tap_dance_dot {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DOT>, <&kp FSLH>;
-        };
+//      td_dot: tap_dance_dot {
+//          compatible = "zmk,behavior-tap-dance";
+//          #binding-cells = <0>;
+//          tapping-term-ms = <200>;
+//          bindings = <&kp DOT>, <&kp FSLH>;
+//      };
         td_pipe: tap_dance_pipe {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp PIPE>, <&kp QMARK>;
         };
-        td_fslh: tap_dance_fslh {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp FSLH>, <&kp BSLH>;
-        };
+//      td_fslh: tap_dance_fslh {
+//          compatible = "zmk,behavior-tap-dance";
+//          #binding-cells = <0>;
+//          tapping-term-ms = <200>;
+//          bindings = <&kp FSLH>, <&kp BSLH>;
+//      };
 
         // TD on alpha keys
         td_i_minus: tap_dance_i_minus {
@@ -400,6 +400,24 @@
             tapping-term-ms = <300>;
             bindings = <&kp RBRC>, <&macro_dbl_diff LBRC RBRC>, <&kp LBRC>;
         };
+        td_par_s: tap_dance_par_single {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&macro_dbl_diff LPAR RPAR>, <&kp LPAR>;
+        };
+        td_bkt_s: tap_dance_bkt_single {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp RBKT>, <&macro_dbl_diff LBKT RBKT>, <&kp LBKT>;
+        };
+        td_brc_s: tap_dance_brc_single {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp RBRC>, <&macro_dbl_diff LBRC RBRC>, <&kp LBRC>;
+        };
 
         // for Russian layout
         td_lrbkt: tap_dance_left_right_bkt {
@@ -433,8 +451,8 @@ label= "BASE"                              ;
 
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &td_u_under &td_i_minus &kp O       &td_p    
                 &kp A       &mt LALT S  &mt LCTRL D &mt LSHFT F &mt LGUI G      &kp H       &kp J       &kp K       &kp L       &td_cl    
-    &kp LC(B)   &kp Z       &kp X       &kp C       &td_v_tilda &kp B           &kp N       &td_m_pipe  &td_comma   &td_dot     &td_fslh    &kp INSERT
-                                        &sk LCTRL   &sk LSHIFT  &kp SPACE       &td_sym     &td_sym     &td_nav 
+    &kp LC(B)   &kp Z       &kp X       &kp C       &td_v_tilda &kp B           &kp N       &td_m_pipe  &td_comma   &kp DOT     &kp FSLH    &kp INSERT
+                                        &sk LALT    &sk LCTRL   &kp LSHIFT      &lt 1 SPACE &td_num     &td_nav 
                         >;
                 };
 
@@ -445,48 +463,74 @@ label= "BASE"                              ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "SYM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃     1     ┃     2     ┃     3     ┃     4     ┃     5     ┃   ┃     !     ┃     @     ┃     #     ┃     *     ┃     _     ┃
-//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     }     ┃     ]     ┃     )     ┃     '     ┃     "     ┃   ┃     &     ┃     ^     ┃     %     ┃     $     ┃     ;     ┃
-// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃     6     ┃     7     ┃     8     ┃     9     ┃     0     ┃   ┃     +     ┃     =     ┃     ,     ┃     .     ┃     /     ┃           ┃
-// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃     `     ┃     <     ┃     >     ┃   ┃   SPACE   ┃    DEF    ┃    NAV    ┃
-//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓               ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃           ┃     +     ┃     [     ┃     ]     ┃    []     ┃               ┃     !     ┃     @     ┃     #     ┃     *     ┃     _     ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃     ~     ┃     -     ┃     (     ┃     )     ┃    ()     ┃               ┃     &     ┃     ^     ┃     %     ┃     $     ┃     ;     ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃           ┃           ┃     =     ┃     {     ┃     }     ┃    {}     ┃               ┃     <     ┃     >     ┃     ,     ┃     .     ┃     /     ┃           ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃     `     ┃     "     ┃     '     ┃               ┃    [[]]   ┃    DEF    ┃    NAV    ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛               ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
-// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+// ╷           ╷           ╷           ╷           ╷           ╷                           ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp EXCL    &kp AT_SIGN &kp HASH    &kp ASTERISK &kp UNDER
-                &td_brc     &td_bkt     &td_par     &td_sqt     &td_dqt         &kp AMPS    &kp CARET   &kp PERCENT &kp DOLLAR   &trans
-    &trans      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0          &kp PLUS    &kp EQUAL   &trans      &trans       &trans     &trans
-                                        &td_grave   &kp LT      &kp GT          &macro_spc  &to DEF     &trans   
+                &none       &kp PLUS    &kp LBKT    &kp RBKT    &macro_dbl_diff LBKT RBKT   &kp EXCL    &kp AT_SIGN &kp HASH    &kp ASTERISK &kp UNDER
+                &kp TILDE   &kp MINUS   &kp LPAR    &kp RPAR    &macro_dbl_diff LPAR RPAR   &kp AMPS    &kp CARET   &kp PERCENT &kp DOLLAR   &trans
+    &trans      &none       &kp EQUAL   &kp LBRC    &kp RBRC    &macro_dbl_diff LBRC RBRC   &kp LT      &kp GT      &trans      &trans       &trans     &trans
+                                        &td_grave   &td_dqt     &td_sqt                     &trans      &to DEF     &trans   
                         >;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
-                raise_layer {
+                num_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "RAISE"                             ;
+label= "NUM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃    BT0    ┃    F1     ┃     F2    ┃    F3     ┃    F4     ┃   ┃   HOME    ┃    END    ┃           ┃           ┃           ┃
+//             ┃     F1    ┃    F2     ┃     F3    ┃    F4     ┃    F5     ┃   ┃     ,     ┃     7     ┃     8     ┃    9      ┃     +     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃    BT1    ┃    F5     ┃           ┃           ┃    F12    ┃   ┃   LEFT    ┃   DOWN    ┃    UP     ┃   RIGHT   ┃           ┃
+//             ┃     F6    ┃    F7     ┃     F8    ┃    F9     ┃    F12    ┃   ┃     .     ┃     4     ┃     5     ┃    6      ┃     -     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃  BT_CLR   ┃    BT2    ┃           ┃           ┃           ┃  BOOTLDR  ┃   ┃  PG_DWN   ┃  PG_UP    ┃           ┃           ┃           ┃           ┃
+// ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃     0     ┃     1     ┃     2     ┃    3      ┃     =     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃           ┃   ┃           ┃   DEF     ┃           ┃
+//                                     ┃           ┃           ┃           ┃   ┃  !SPACE   ┃   [DEF]   ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷            ╷           ╷           ╷           ╷           ╷   ╷             ╷           ╷           ╷           ╷           ╷           ╷
 
-                &bt BT_SEL 0  &kp F1      &kp F2      &kp F3      &kp F4          &kp HOME      &kp END     &none      &none       &none         
-                &bt BT_SEL 0  &kp F5      &none       &none       &kp F12         &kp LEFT      &kp DOWN    &kp UP     &kp RIGHT   &none     
-    &bt BT_CLR  &bt BT_SEL 0  &none       &none       &none       &bootloader     &kp PAGE_DOWN &kp PAGE_UP &none      &none       &none      &bootloader    
-                                          &trans      &trans      &trans          &trans        &to DEF     &to DEF     
+                &kp F1        &kp F2      &kp F3      &kp F4      &kp F5          &kp COMMA     &kp N7      &kp N8     &kp N9      &kp PLUS      
+                &kp F6        &kp F7      &kp F8      &kp F9      &kp F12         &kp DOT       &kp N4      &kp N5     &kp N6      &kp MINUS 
+    &trans      &none         &none       &none       &none       &none           &kp N0        &kp N1      &kp N2     &kp N3      &kp EQUAL   &trans         
+                                          &trans      &trans      &trans          &macro_spc    &to DEF     &trans      
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                nav_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+label= "NAV"                               ;
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃    BT0    ┃           ┃           ┃   VOL +   ┃   VOL -   ┃   ┃   HOME    ┃    END    ┃           ┃           ┃           ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃    BT1    ┃           ┃           ┃           ┃   MUTE    ┃   ┃   LEFT    ┃   DOWN    ┃    UP     ┃   RIGHT   ┃           ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃  BOOTLDR  ┃    BT2    ┃           ┃           ┃           ┃  BT_CLR   ┃   ┃  PG_DWN   ┃   PG_UP   ┃           ┃           ┃           ┃  BOOTLDR  ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃           ┃           ┃   ┃           ┃   DEF     ┃    DEF    ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+// ╷           ╷            ╷           ╷           ╷           ╷           ╷   ╷             ╷           ╷           ╷           ╷           ╷           ╷
+
+                &bt BT_SEL 0  &none       &none       &kp K_VOL_UP &kp K_VOL_DN    &kp HOME      &kp END     &none      &none       &none         
+                &bt BT_SEL 0  &none       &none       &none        &kp K_MUTE      &kp LEFT      &kp DOWN    &kp UP     &kp RIGHT   &none     
+    &bootloader &bt BT_SEL 0  &none       &none       &none        &bt BT_CLR      &kp PAGE_DOWN &kp PAGE_UP &none      &none       &none      &bootloader    
+                                          &trans      &trans       &trans          &trans        &to DEF     &to DEF     
                         >;
                 };
     };
