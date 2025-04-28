@@ -263,7 +263,7 @@
         td_num: tap_dance_num {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&ht_mo_sl 2 2>, <&tog 2>, <&to DEF>;
         };
         // hold - nav
@@ -273,7 +273,7 @@
         td_nav: tap_dance_nav {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;  // TODO check
+            tapping-term-ms = <100>;  // TODO check
             bindings = <&ht_mo_sl 3 3>, <&tog 3>, <&to DEF>;
         };
 
@@ -452,7 +452,7 @@ label= "BASE"                              ;
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &td_u_under &td_i_minus &kp O       &td_p    
                 &kp A       &mt LALT S  &mt LCTRL D &mt LSHFT F &mt LGUI G      &kp H       &kp J       &kp K       &kp L       &td_cl    
     &kp LC(B)   &kp Z       &kp X       &kp C       &td_v_tilda &kp B           &kp N       &td_m_pipe  &td_comma   &kp DOT     &kp FSLH    &kp INSERT
-                                        &sk LALT    &sk LCTRL   &kp LSHIFT      &lt 1 SPACE &td_num     &td_nav 
+                                        &sk LALT    &sk LCTRL   &sk LSHIFT      &lt 1 SPACE &td_num     &td_nav 
                         >;
                 };
 
