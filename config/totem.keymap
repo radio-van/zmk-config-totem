@@ -528,8 +528,8 @@ label= "NAV"                               ;
 // ╷           ╷            ╷           ╷           ╷           ╷           ╷   ╷             ╷           ╷           ╷           ╷           ╷           ╷
 
                 &bt BT_SEL 0  &none       &none       &kp K_VOL_DN &kp K_VOL_UP    &kp HOME      &kp END     &none      &none       &none         
-                &bt BT_SEL 0  &none       &none       &none        &kp K_MUTE      &kp LEFT      &kp DOWN    &kp UP     &kp RIGHT   &none     
-    &bootloader &bt BT_SEL 0  &none       &none       &none        &bt BT_CLR      &kp PAGE_DOWN &kp PAGE_UP &none      &none       &none      &bootloader    
+                &bt BT_SEL 1  &none       &none       &none        &kp K_MUTE      &kp LEFT      &kp DOWN    &kp UP     &kp RIGHT   &none     
+    &bootloader &bt BT_SEL 2  &none       &none       &none        &bt BT_CLR      &kp PAGE_DOWN &kp PAGE_UP &none      &none       &none      &bootloader    
                                           &trans      &trans       &trans          &trans        &to DEF     &to DEF     
                         >;
                 };
