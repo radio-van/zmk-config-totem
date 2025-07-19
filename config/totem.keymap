@@ -86,12 +86,14 @@
         combo_shift_r {
             timeout-ms = <50>;
             key-positions = <13 14>;
-            bindings = <&macro_sft_r>;
+            // bindings = <&macro_sft_r>;
+            bindings = <&kp GT>;
         };
         combo_shift_l {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            bindings = <&macro_sft_l>;
+            // bindings = <&macro_sft_l>;
+            bindings = <&kp LT>;
         };
     };
 
@@ -464,20 +466,20 @@ label= "BASE"                              ;
 label= "SYM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓               ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃     +     ┃     [     ┃     ]     ┃    []     ┃               ┃     !     ┃     @     ┃     #     ┃     *     ┃     _     ┃
+//             ┃           ┃           ┃     +     ┃     [     ┃   ]  []   ┃               ┃     !     ┃     @     ┃     #     ┃     *     ┃     _     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     ~     ┃     -     ┃     (     ┃     )     ┃    ()     ┃               ┃     &     ┃     ^     ┃     %     ┃     $     ┃     ;     ┃
+//             ┃     ~     ┃           ┃     -     ┃     (     ┃   )  ()   ┃               ┃     &     ┃     ^     ┃     %     ┃     $     ┃     ;     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃     =     ┃     {     ┃     }     ┃    {}     ┃               ┃     <     ┃     >     ┃     ,     ┃     .     ┃     /     ┃           ┃
+// ┃           ┃     \     ┃           ┃     =     ┃     {     ┃   }  {}   ┃               ┃     <     ┃     >     ┃     ,     ┃     .     ┃     /     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃     `     ┃     "     ┃     '     ┃               ┃    [[]]   ┃    DEF    ┃    NAV    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛               ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷                           ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none       &kp PLUS    &kp LBKT    &kp RBKT    &macro_dbl_diff LBKT RBKT   &kp EXCL    &kp AT_SIGN &kp HASH    &kp ASTERISK &kp UNDER
-                &kp TILDE   &kp MINUS   &kp LPAR    &kp RPAR    &macro_dbl_diff LPAR RPAR   &kp AMPS    &kp CARET   &kp PERCENT &kp DOLLAR   &trans
-    &trans      &none       &kp EQUAL   &kp LBRC    &kp RBRC    &macro_dbl_diff LBRC RBRC   &kp LT      &kp GT      &trans      &trans       &trans     &trans
+                &none       &none       &kp PLUS    &kp LBKT    &td_bkt_s                   &kp EXCL    &kp AT_SIGN &kp HASH    &kp ASTERISK &kp UNDER
+                &kp TILDE   &none       &kp EQUAL   &kp LPAR    &td_par_s                   &kp AMPS    &kp CARET   &kp PERCENT &kp DOLLAR   &trans
+    &trans      &kp BSLH    &none       &kp MINUS   &kp LBRC    &td_brc_s                   &kp LT      &kp GT      &trans      &trans       &trans     &trans
                                         &td_grave   &td_dqt     &td_sqt                     &trans      &to DEF     &trans   
                         >;
                 };
