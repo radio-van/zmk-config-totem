@@ -406,7 +406,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&macro_dbl_diff LPAR RPAR>, <&kp LPAR>;
+            bindings = <&kp RPAR>, <&macro_dbl_diff LPAR RPAR>, <&kp LPAR>;
         };
         td_bkt_s: tap_dance_bkt_single {
             compatible = "zmk,behavior-tap-dance";
