@@ -407,19 +407,19 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RPAR>, <&macro_dbl_diff LPAR RPAR>, <&kp LPAR>;
+            bindings = <&kp LPAR>, <&macro_dbl_diff LPAR RPAR>, <&kp LPAR>;
         };
         td_bkt_s: tap_dance_bkt_single {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RBKT>, <&macro_dbl_diff LBKT RBKT>, <&kp LBKT>;
+            bindings = <&kp LBKT>, <&macro_dbl_diff LBKT RBKT>, <&kp LBKT>;
         };
         td_brc_s: tap_dance_brc_single {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RBRC>, <&macro_dbl_diff LBRC RBRC>, <&kp LBRC>;
+            bindings = <&kp LBRC>, <&macro_dbl_diff LBRC RBRC>, <&kp LBRC>;
         };
 
         // for Russian layout
@@ -467,20 +467,20 @@ label= "BASE"                              ;
 label= "SYM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓               ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃           ┃     +     ┃     [     ┃   ]  []   ┃               ┃     !     ┃     @     ┃     #     ┃     *     ┃     _     ┃
+//             ┃           ┃           ┃     +     ┃   {  {}   ┃     }     ┃               ┃     !     ┃     @     ┃     #     ┃     *     ┃     _     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     ~     ┃           ┃     -     ┃     (     ┃   )  ()   ┃               ┃     &     ┃     ^     ┃     %     ┃     $     ┃     ;     ┃
+//             ┃     ~     ┃     |     ┃     =     ┃   (  ()   ┃     )     ┃               ┃     &     ┃     ^     ┃     %     ┃     $     ┃     ;     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃     \     ┃           ┃     =     ┃     {     ┃   }  {}   ┃               ┃     <     ┃     >     ┃     ,     ┃     .     ┃     /     ┃           ┃
+// ┃           ┃     \     ┃           ┃     -     ┃   [  []   ┃     ]     ┃               ┃     <     ┃     >     ┃     ,     ┃     .     ┃     /     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃     `     ┃     "     ┃     '     ┃               ┃    [[]]   ┃    DEF    ┃    NAV    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛               ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷                           ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none       &none       &kp PLUS    &kp LBKT    &td_bkt_s                   &kp EXCL    &kp AT_SIGN &kp HASH    &kp ASTERISK &kp UNDER
-                &kp TILDE   &none       &kp EQUAL   &kp LPAR    &td_par_s                   &kp AMPS    &kp CARET   &kp PERCENT &kp DOLLAR   &trans
-    &trans      &kp BSLH    &none       &kp MINUS   &kp LBRC    &td_brc_s                   &kp LT      &kp GT      &trans      &trans       &trans     &trans
+                &none       &none       &kp PLUS    &td_brc_s   RBKT                        &kp EXCL    &kp AT_SIGN &kp ASTERISK &kp HASH    &none
+                &kp TILDE   &kp PIPE    &kp EQUAL   &td_par_s   RPAR                        &kp AMPS    &kp PERCENT &kp CARET    &kp DOLLAR  &trans
+    &trans      &kp BSLH    &kp UNDER   &kp MINUS   &td_bkt_s   RBRC                        &kp LT      &kp GT      &trans       &trans      &trans     &trans
                                         &td_grave   &td_dqt     &td_sqt                     &trans      &to DEF     &trans   
                         >;
                 };
