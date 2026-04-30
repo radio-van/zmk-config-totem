@@ -449,21 +449,21 @@ label= "BASE"                              ;
 label= "SYM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓               ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃           ┃     +     ┃     [     ┃   ]  []   ┃               ┃     !     ┃     @     ┃     #     ┃     *     ┃     _     ┃
+//             ┃           ┃           ┃     +     ┃   { {}    ┃     }     ┃               ┃     !     ┃     @     ┃     *     ┃     #     ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     ~     ┃           ┃     -     ┃     (     ┃   )  ()   ┃               ┃     &     ┃     ^     ┃     %     ┃     $     ┃     ;     ┃
+//             ┃     ~     ┃     |     ┃     -     ┃   ( ()    ┃     )     ┃               ┃     &     ┃     %     ┃     ^     ┃     $     ┃     ;     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃     \     ┃           ┃     =     ┃     {     ┃   }  {}   ┃               ┃     <     ┃     >     ┃     ,     ┃     .     ┃     /     ┃           ┃
+// ┃           ┃     \     ┃     _     ┃     =     ┃   [ []    ┃     ]     ┃               ┃     <     ┃     >     ┃     ,     ┃     .     ┃     /     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫               ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃     `     ┃     "     ┃     '     ┃               ┃    [[]]   ┃    DEF    ┃    NAV    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛               ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷                           ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none       &none       &kp PLUS    &td_brc_s   &kp RBRC                    &kp EXCL    &kp AT_SIGN &kp HASH    &kp ASTERISK &kp UNDER
-                &kp TILDE   &none       &kp EQUAL   &td_par_s   &kp RPAR                    &kp AMPS    &kp CARET   &kp PERCENT &kp DOLLAR   &trans
-    &trans      &kp BSLH    &none       &kp MINUS   &td_bkt_s   &kp RBKT                    &kp LT      &kp GT      &trans      &trans       &trans     &trans
-                                        &td_grave   &td_dqt     &td_sqt                     &trans      &to DEF     &trans   
+                &none       &none       &kp PLUS    &td_brc_s   &kp RBRC                    &kp EXCL    &kp AT_SIGN &kp ASTERISK &kp HASH     &none
+                &kp TILDE   &kp PIPE    &kp EQUAL   &td_par_s   &kp RPAR                    &kp AMPS    &kp PERCENT &kp CARET    &kp DOLLAR   &trans
+    &trans      &kp BSLH    &kp UNDER   &kp MINUS   &td_bkt_s   &kp RBKT                    &kp LT      &kp GT      &trans       &trans       &trans     &trans
+                                        &td_grave   &td_dqt     &td_sqt                     &trans      &to DEF     &trans
                         >;
                 };
 
